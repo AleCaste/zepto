@@ -2,5 +2,5 @@
     "name": "zepto",
     "version": "1.2.0",
     "main": "index.js",
-    "license": "MIT",
+    "license": "MIT"
 }
