@@ -7,6 +7,58 @@ parent:function(){return this.parentNode},first:function(a){if(0===a)return this
 c),u;}finally{g&&g.removeClass(k)}return h?f.uniq(e.map(l,function(a,b){return h.call(a,b,l,d)})):l})};f.matches=function(a,c){return m(c,function(b,c,d){return(!b||r(a,b))&&(!c||c.call(a,null,d)===a)})}})(Zepto);
 
 // Zepto.js | getScript. See: https://stackoverflow.com/a/11545877/3621841
-;(function(a){a.ajaxSetup=function(b){a.ajaxSettings=a.extend(a.ajaxSettings,b)};a.getScript=function(){var b=function(b,c,d,e){return a.extend({cache:a.ajaxSettings.cache},e,{url:b,success:c,error:d})}.apply(null,arguments);b.dataType="script";return a.ajax(b)};a.fn.outerWidth=function(){return a(this).width()};a.fn.outerHeight=function(){return a(this).height()}})(Zepto);
+;(function($){
+  
+  $.ajaxSetup = function(options) {
+    $.ajaxSettings = $.extend($.ajaxSettings, options);
+  };
+  
+  /*
+  $.getScript = function (url, onload, onerror) {
+    var script = document.createElement('script'),
+        $script = $(script);
+
+    // You only need to use setAttribute for non-standard attributes.
+    // Use:          script.src = url; 
+    // Instead of:   script.setAttribute('src', url); 
+    script.type = 'text/javascript';
+    script.async = true;
+    script.src = url;
+    
+    $.ajaxSettings.cache
+
+    $('head').append(script);
+    $script.bind('load', onload);
+    $script.bind('error', onerror);
+  };
+  */
+  
+  $.getScript = function(/* url, success, error, options */){
+    // See Zepto $.getJSON code. This is very similar.
+    function parseArguments(url, success, error, options) {
+      return $.extend({
+        cache: $.ajaxSettings.cache
+      }, options, {
+        url: url,
+        success: success,
+        error: error
+      });
+    };
+    var options = parseArguments.apply(null, arguments);
+    options.dataType = 'script';
+    return $.ajax(options);
+  };
+  
+  $.fn.outerWidth = function() {
+    return $(this).width();  // In Zepto, width is the jQuery equivalent to outerWidth
+  };
+  
+  $.fn.outerHeight = function() {
+    return $(this).height();  // In Zepto, height is the jQuery equivalent to outerHeight
+  };
+  
+})(Zepto);
+
+
 
 module.exports = Zepto;
