@@ -1,6 +1,30 @@
 {
+  "_from": "git://github.com/AleCaste/zepto.git#master",
+  "_id": "zepto@1.2.0",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/zepto",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "zepto@git://github.com/AleCaste/zepto.git#master",
     "name": "zepto",
-    "version": "1.2.0",
-    "main": "index.js",
-    "license": "MIT"
+    "escapedName": "zepto",
+    "rawSpec": "git://github.com/AleCaste/zepto.git#master",
+    "saveSpec": "git://github.com/AleCaste/zepto.git#master",
+    "fetchSpec": "git://github.com/AleCaste/zepto.git",
+    "gitCommittish": "master"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git://github.com/AleCaste/zepto.git#0695ced9b82c35c099eafa32cef0adf37cbce093",
+  "_spec": "zepto@git://github.com/AleCaste/zepto.git#master",
+  "_where": "D:\\xampp\\htdocs\\on24-conf-client",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "license": "MIT",
+  "main": "index.js",
+  "name": "zepto",
+  "version": "1.2.0"
 }
